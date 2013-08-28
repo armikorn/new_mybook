@@ -1,0 +1,28 @@
+
+
+<h1>Name : <%= @users.first.name %></h1>
+
+<br>
+<%= image_tag @users.first.profilePic_url.to_s %>
+<br>
+
+<p>Education : <%= @users.first.education %></p>
+<br>
+<p>Hobbies : <%= @users.first.hobbies %></p>
+<br>
+<p>Birthday : <%= @users.first.birthday %></p>
+<br>
+<p>Relationship : <%= @users.first.relationship %></p>
+
+<br>
+<%= link_to 'Edit', edit_user_path(@users.first) %>
+<br><br>
+<%= link_to 'New Status update', new_status_update_path %>
+<br>
+
+
+<% @status.each do |status_update| %>
+  <%= status_update.content %>
+  <br>
+  <hr>
+<% end %>
